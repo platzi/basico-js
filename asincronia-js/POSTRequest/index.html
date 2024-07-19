@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 10%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    button:hover,
+    button:active {
+      background: #0056b3;
+    }
+
+    .form-control {
+      margin: 0.5rem 0;
+    }
+
+    .posts {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      /* Por defecto, una columna */
+      gap: 1rem;
+    }
+
+    .post-item {
+      margin: 1rem 0;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      padding: 1rem;
+    }
+
+    .post-item h2,
+    .post-item p {
+      margin: 0.5rem 0;
+    }
+
+
+    .post-item h2 {
+      font-size: 1rem;
+      color: #414141;
+    }
+
+    .post-item p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .post-item button {
+      background: #f72222;
+    }
+
+    .post-item button:hover,
+    .post-item button:active {
+      background: #dd2929;
+    }
+
+    @media (min-width: 600px) {
+
+      /* Tablet */
+      .posts {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas en tabletas */
+      }
+    }
+
+    @media (min-width: 900px) {
+
+      /* Desktop */
+      .posts {
+        grid-template-columns: repeat(3, 1fr);
+        /* Tres columnas en escritorio */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="new-post">
+    <form>
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" id="title" />
+      </div>
+      <div class="form-control">
+        <label for="content">Content</label>
+        <textarea rows="3" id="content"></textarea>
+      </div>
+      <button type="submit">POST Content</button>
+    </form>
+  </section>
+
+  <section id="available-posts">
+    <button>GET Content</button>
+    <section id="posts-container" class="posts"></section>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
